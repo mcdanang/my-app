@@ -19,7 +19,7 @@ function Exercise3() {
   };
 
   return (
-      <Box bg='tomato' w='100%' p={4} color='white' textAlign={'center'}>
+      <Box minH='400px' bg='lightskyblue' w='100%' p={4} color='white' textAlign={'center'}>
         <h1>Exercise 3</h1>
         <h3>Create a filter application</h3>
         Search: <Input onChange={filterBySearch} placeholder='Insert fruit name' _placeholder={{ opacity: 0.5, color: 'white' }} w={300} m={5} color={'white'}/>
@@ -30,7 +30,7 @@ function Exercise3() {
                 <Center>
                   <Box 
                     bg='white'
-                    color="tomato" 
+                    color="blue.500" 
                     w={200} 
                     m={2} 
                     p={1}

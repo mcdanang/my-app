@@ -33,11 +33,11 @@ function Exercise1() {
   }
 
   return (
-      <Box bg='tomato' w='100%' p={4} color='white' textAlign={'center'}>
+      <Box minH='400px' bg='lightskyblue' w='100%' p={4} color='white' textAlign={'center'}>
         <h1>Exercise 2</h1>
         <h3>Create a stopwatch application</h3>
         <Center>
-          <Box bg='white' w='100px' p={4} m={5} color='tomato' textAlign={'center'} fontSize={30}>
+          <Box bg='white' w='100px' p={4} m={5} color='blue.500' textAlign={'center'} fontSize={30}>
           {("0" + Math.floor((time / 60000) % 60)).slice(-2)}
             : 
             {("0" + Math.floor((time / 1000) % 60)).slice(-2)}

@@ -1,16 +1,22 @@
 import { Link } from 'react-router-dom';
-import { Box, Heading, Center } from '@chakra-ui/react';
+import { Box, Heading, Center, Stack, Button } from '@chakra-ui/react';
 
 function Header() {
   return (
-    <Box bg='black' w='100%' p={4} color='white'>
+    <Box bg='blue.500' w='100%' p={4} color='white'>
       <Center>
-      <Heading>Choose Exercise</Heading>
-      <ul>
-        <Link to="/my-app/exercise1"><Box bg='maroon' w='250px' p={4} m={1} color='white'>Exercise 1 (Counter App)</Box></Link>
-        <Link to="/my-app/exercise2"><Box bg='maroon' w='250px' p={4} m={1} color='white'>Exercise 2 (Stopwatch App)</Box></Link>
-        <Link to="/my-app/exercise3"><Box bg='maroon' w='250px' p={4} m={1} color='white'>Exercise 3 (Filter App)</Box></Link>
-      </ul>
+      <Heading m={20}>Choose Exercise</Heading>
+      <Stack direction='column' spacing={2} align='center'>
+          <Link style={{ textDecoration: 'none' }} to="/my-app/exercise1">
+            <Button colorScheme='facebook' variant='ghost' w={'250px'}>Exercise 1 (Counter App)</Button>
+          </Link>
+          <Link style={{ textDecoration: 'none' }} to="/my-app/exercise2">
+            <Button colorScheme='facebook' variant='ghost' w={'250px'}>Exercise 2 (Stopwatch App)</Button>
+          </Link>
+          <Link style={{ textDecoration: 'none' }} to="/my-app/exercise3">
+            <Button colorScheme='facebook' variant='ghost' w={'250px'}>Exercise 3 (Filter App)</Button>
+          </Link>
+      </Stack>
       </Center>
     </Box>
   )
