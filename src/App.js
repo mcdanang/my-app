@@ -16,9 +16,9 @@ class App extends React.Component {
       <div>
         <Header name={name}/>
         <Routes>
-          <Route exact path="/my-app/exercise1" element={<Exercise1/>} />
-          <Route exact path="/my-app/exercise2" element={<Exercise2/>} />
-          <Route exact path="/my-app/exercise3" element={<Exercise3/>} />
+          <Route exact path="/exercise1" element={<Exercise1/>} />
+          <Route exact path="/exercise2" element={<Exercise2/>} />
+          <Route exact path="/exercise3" element={<Exercise3/>} />
         </Routes>
         <Footer/>
       </div>
