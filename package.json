@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mcdanang.github.io/exercise1/",
+  "homepage": "https://mcdanang.github.io/my-app/",
   "dependencies": {
     "-": "^0.0.1",
     "@chakra-ui/react": "^2.5.1",
