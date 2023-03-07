@@ -10,8 +10,9 @@ function Exercise1() {
     let interval = null;
     if (status === true) {
       interval = setInterval(() => {
-        setTime((time) => time + 10)
-      }, 10);
+        setTime((time) => time + 1)
+      }, 1000);
+      console.log(interval);
     } else {
       clearInterval(interval);
     }
@@ -38,9 +39,9 @@ function Exercise1() {
         <h3>Create a stopwatch application</h3>
         <Center>
           <Box bg='white' w='100px' p={4} m={5} color='blue.500' textAlign={'center'} fontSize={30}>
-          {("0" + Math.floor((time / 60000) % 60)).slice(-2)}
+          {("0" + Math.floor((time / 60) % 60)).slice(-2)}
             : 
-            {("0" + Math.floor((time / 1000) % 60)).slice(-2)}
+            {("0" + Math.floor((time) % 60)).slice(-2)}
           </Box>
         </Center>
         <Button m={2} onClick={start} leftIcon={<MdPlayArrow />} colorScheme='green' variant='solid'>

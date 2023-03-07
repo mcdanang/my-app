@@ -14,12 +14,12 @@ function Header() {
             </Link>
             <Link style={{ textDecoration: 'none' }} to="/my-app/exercise2">
               <Button w={150} p={2} whiteSpace="normal" blockSize="auto" colorScheme='facebook' variant='ghost'>
-                Exercise 2<br></br>(Counter App)
+                Exercise 2<br></br>(Stopwatch App)
               </Button>
             </Link>
             <Link style={{ textDecoration: 'none' }} to="/my-app/exercise3">
               <Button w={150} p={2} whiteSpace="normal" blockSize="auto" colorScheme='facebook' variant='ghost'>
-                Exercise 3<br></br>(Counter App)
+                Exercise 3<br></br>(Filter App)
               </Button>
             </Link>
 
