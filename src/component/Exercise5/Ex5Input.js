@@ -7,7 +7,8 @@ import {
   Td,
   TableCaption,
   TableContainer,
-  Button
+  Button,
+  Center
 } from '@chakra-ui/react'
 
 localStorage.setItem("nameList", "[]");
@@ -46,15 +47,14 @@ function Ex5Input() {
     )
   })
   return (
-    <TableContainer>
+    <TableContainer pl={4}>
       <Table variant='striped' colorScheme='teal'>
         <TableCaption>Name list to be added</TableCaption>
         <Thead>
           <Tr>
-            <Th>NO</Th>
-            <Th>NAME</Th>
-            <Th>BUTTON (ADD)</Th>
-            <Th>BUTTON (DELETE)</Th>
+            <Th textAlign={'center'}>NO</Th>
+            <Th textAlign={'center'}>NAME</Th>
+            <Th colSpan={2} textAlign={'center'}>BUTTON</Th>
           </Tr>
         </Thead>
         <Tbody>

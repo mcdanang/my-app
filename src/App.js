@@ -12,11 +12,10 @@ import Ex5List from "./component/Exercise5/Ex5List";
 
 class App extends React.Component {
   render() {
-    var name = 'Danang';
 
     return (
       <div>
-        <Header name={name}/>
+        <Header width={'500px'}/>
         <Routes>
           <Route exact path="/my-app/exercise1" element={<Exercise1/>} />
           <Route exact path="/my-app/exercise2" element={<Exercise2/>} />
