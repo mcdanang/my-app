@@ -11,21 +11,24 @@ import {
   Center
 } from '@chakra-ui/react'
 
-localStorage.setItem("nameList", "[]");
+if(JSON.parse(localStorage.getItem('nameList')) == undefined) {
+  localStorage.setItem("nameList", JSON.stringify([]));
+}
+// localStorage.setItem("nameList", "[]");
 // localStorage.clear();
 
 function Ex5Input() {
-  function handleButtonClick(button, event) {
+  function handleButtonClick(button, el) {
     const nameList = JSON.parse(localStorage.getItem("nameList"));
-    if (button === 'add' && !nameList.includes(event.target.id)) {
-      nameList.push(event.target.id);
-      console.log(nameList);
+    if (button === 'add' && !nameList.includes(el)) {
+      nameList.push(el);
+      // console.log(nameList);
       localStorage.setItem("nameList", JSON.stringify(nameList));
       console.log(localStorage.getItem("nameList"));
-    } else if (button === 'delete' && nameList.includes(event.target.id)) {
-      const index = nameList.indexOf(event.target.id);
+    } else if (button === 'delete' && nameList.includes(el)) {
+      const index = nameList.indexOf(el);
       nameList.splice(index, 1);
-      console.log(nameList);
+      // console.log(nameList);
       localStorage.setItem("nameList", JSON.stringify(nameList));
       console.log(localStorage.getItem("nameList"));
     }
@@ -38,10 +41,10 @@ function Ex5Input() {
         <Td>{index + 1}</Td>
         <Td>{el}</Td>
         <Td>
-          <Button id={el} onClick={e => handleButtonClick('add', e)} colorScheme='green'>Add</Button>
+          <Button onClick={() => handleButtonClick('add', el)} colorScheme='green'>Add</Button>
         </Td>
         <Td>
-          <Button id={el} onClick={e => handleButtonClick('delete', e)} colorScheme='red'>Delete</Button>
+          <Button onClick={() => handleButtonClick('delete', el)} colorScheme='red'>Delete</Button>
         </Td>
       </Tr>
     )
