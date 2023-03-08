@@ -20,10 +20,7 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
 } from '@chakra-ui/react'
 import productList from "./product.json";
 import { useSelector, useDispatch } from 'react-redux';
@@ -31,10 +28,6 @@ import { addProduct, deleteProduct } from '../../app/productSlice';
 import { Icon } from '@chakra-ui/react'
 import { MdShoppingCart, MdNotifications, MdEmail } from 'react-icons/md'
 import { Link } from 'react-router-dom';
-
-if(JSON.parse(localStorage.getItem('productList')) == undefined) {
-  localStorage.setItem("productList", JSON.stringify([]));
-}
 
 function Shop() {
   const dispatch = useDispatch();

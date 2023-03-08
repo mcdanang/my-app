@@ -36,7 +36,7 @@ export const productSlice = createSlice({
       if (productsName.includes(product.name)) {
         const index = productsName.indexOf(product.name);
         if (state[index].qty > 1) state[index].qty -= 1;
-        else state.splice(index, 1);
+        // else state.splice(index, 1);
       }
     },
   },

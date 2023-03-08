@@ -11,7 +11,9 @@ import {
   Button,
   Heading,
   Text,
-  Center
+  Center,
+  Box,
+  Flex
 } from '@chakra-ui/react'
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from '../../app/productSlice';
@@ -60,9 +62,23 @@ function Cart() {
     )
   })
 
+  const productsPrice = productList.map(el => [el.name, el.price * el.qty]);
+  let totalPrice = 0;
+  for (let p of productsPrice) {
+    totalPrice += p[1];
+  }
+
   return (
     <>
       <Heading textAlign={'center'}>KERANJANG</Heading>
+      <Box m={10} p={3} w={'400px'} border={'4px'} borderColor={'#eeeeee'} borderRadius={10}>
+        <Text fontWeight={'bold'}>Ringkasan Belanja</Text>
+        {/* <Text>Total Harga Baju :</Text>
+        <Text>Total Harga Celana :</Text> */}
+        <Box h={1} bgColor={'#eeeeee'}></Box>
+        <Text fontWeight={'bold'}>Total Harga : {rupiah(totalPrice)}</Text>
+        <Button color={'white'} w={'100%'} bgColor={'green.400'}>Beli</Button>
+      </Box>
       <TableContainer>
         <Table variant='striped' colorScheme='teal'>
           <TableCaption>Product list that has been added</TableCaption>
