@@ -13,10 +13,12 @@ import {
   Text,
   Center,
   Box,
-  Flex
+  Flex,
 } from '@chakra-ui/react'
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../../app/productSlice';
+import { increment, decrement, deleteProduct } from '../../app/productSlice';
+import { Icon } from '@chakra-ui/react'
+import { MdDelete } from 'react-icons/md'
 
 function Cart() {
 
@@ -30,7 +32,7 @@ function Cart() {
         str += ".";
       }
     }
-    return `Rp. ${str}`;
+    return `Rp${str}`;
   }
 
   const productList = useSelector((state) => state.product);
@@ -58,6 +60,13 @@ function Cart() {
             <Button onClick={() => dispatch(decrement(product))} colorScheme='red'>-</Button>
           </Center>
         </Td>
+        <Td>
+          <Center>
+            <Button onClick={() => dispatch(deleteProduct(product))} colorScheme='blackAlpha'>
+              <Icon as={ MdDelete } boxSize={6} />
+            </Button>
+          </Center>
+        </Td>
       </Tr>
     )
   })
@@ -68,28 +77,41 @@ function Cart() {
     totalPrice += p[1];
   }
 
+  const summaryPrice = productList.map(el => {
+    return (
+      <Flex>
+        <Box w={'75%'} pb={1} color={'#aaaaaa'} fontWeight={'bold'}>
+          Total Harga {el.name} ({el.qty} barang)
+        </Box>
+        <Box pb={1} color={'#aaaaaa'} fontWeight={'bold'}>
+          {rupiah(el.price * el.qty)}
+        </Box>
+      </Flex>
+    )
+  })
+
   return (
     <>
       <Heading textAlign={'center'}>KERANJANG</Heading>
       <Box m={10} p={3} w={'400px'} border={'4px'} borderColor={'#eeeeee'} borderRadius={10}>
         <Text fontWeight={'bold'}>Ringkasan Belanja</Text>
-        {/* <Text>Total Harga Baju :</Text>
-        <Text>Total Harga Celana :</Text> */}
+        {summaryPrice}
         <Box h={1} bgColor={'#eeeeee'}></Box>
         <Text fontWeight={'bold'}>Total Harga : {rupiah(totalPrice)}</Text>
         <Button color={'white'} w={'100%'} bgColor={'green.400'}>Beli</Button>
       </Box>
       <TableContainer>
-        <Table variant='striped' colorScheme='teal'>
+        <Table colorScheme='teal'>
           <TableCaption>Product list that has been added</TableCaption>
           <Thead>
-            <Tr>
+            <Tr bgColor={'#e2e8f0'}>
               <Th textAlign={'center'}>NO</Th>
               <Th textAlign={'center'}>PRODUCT</Th>
               <Th textAlign={'center'}>IMAGE</Th>
               <Th textAlign={'center'}>PRICE</Th>
               <Th textAlign={'center'}>STOCK</Th>
               <Th colSpan={3} textAlign={'center'}>QTY</Th>
+              <Th textAlign={'center'}>DELETE</Th>
             </Tr>
           </Thead>
           <Tbody>

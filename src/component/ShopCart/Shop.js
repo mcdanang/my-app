@@ -12,7 +12,8 @@ import {
   Heading,
   Box,
   Input,
-  Flex
+  Flex,
+  Text
 } from '@chakra-ui/react'
 import {
   Popover,
@@ -33,18 +34,6 @@ function Shop() {
   const dispatch = useDispatch();
 
   const products = productList.map((product, index) => {
-    function rupiah(price) {
-      const priceString = price.toString();
-      const len = priceString.length;
-      let str = "";
-      for (let i = 0; i < len; i++) {
-        str += priceString[i];
-        if ((len - i - 1) % 3 == 0 && i != len - 1) {
-          str += ".";
-        }
-      }
-      return `Rp. ${str}`;
-    }
 
     return (
       <Tr>
@@ -62,13 +51,31 @@ function Shop() {
       </Tr>
     )
   })
+
+  const cartList = useSelector((state) => state.product);
+  console.log(cartList);
+  const shortCart = cartList.map(product => {
+    return (
+      <Box borderTop={'2px'} borderTopColor={'#eeeeee'} pt={2} pb={2}>
+        <Flex alignItems={'center'}>
+          <Image boxSize={10} src={product.img}></Image>
+          <Box pl={4} w={'50%'}>
+            <Box fontSize={14} fontWeight={'bold'}>{product.name}</Box>
+            <Box fontSize={12}>{product.qty} Barang</Box>
+          </Box>
+          <Box fontSize={13} fontWeight={'bold'} color={'orange.500'}>{rupiah(product.price * product.qty)}</Box>
+        </Flex>
+      </Box>
+    )
+  });
+
   return (
     <>
       <Flex alignItems={'center'} justifyContent={'center'}>
         <Heading color={'green'} mr={'10%'} ml={'5%'}>TOKOPAEDI</Heading>
         Search: <Input placeholder='Cari HP terbaru' _placeholder={{ opacity: 0.5, color: 'white' }} w={300} m={5} color={'white'}/>
         
-        <Popover>
+        <Popover placement='bottom'>
           <PopoverTrigger>
             <Button border={0} bg={'white'} focus={'#eeeeee'} ml={20} mr={5}>
               <Icon as={ MdShoppingCart } boxSize={6} />
@@ -77,16 +84,19 @@ function Shop() {
           <PopoverContent>
             <PopoverArrow />
             <PopoverHeader>
-              <Flex alignItems={'center'} fontWeight={'bold'}>
-                Keranjang
+              <Flex alignItems={'center'} justifyContent={'center'} fontWeight={'bold'}>
+                <Box h={5} ml={6} >Keranjang</Box>
+                <Box h={5} ml={1} mr={10}>({cartList.length})</Box>
                 <Link style={{ textDecoration: 'none' }} to="/my-app/cart">
-                  <Button border={0} bg={'white'} focus={'#eeeeee'} ml={20} mr={5} color={'green'}>
+                  <Button fontSize={14} border={0} bg={'white'} focus={'#eeeeee'} mr={2} color={'green'}>
                     Lihat Sekarang
                   </Button>
                 </Link>
               </Flex>
             </PopoverHeader>
-            <PopoverBody>Are you sure you want to have that milkshake?</PopoverBody>
+            <PopoverBody>
+              {shortCart}
+            </PopoverBody>
           </PopoverContent>
         </Popover>
         <Button border={0} bg={'white'} focus={'#eeeeee'} mr={5}>
@@ -97,11 +107,11 @@ function Shop() {
         </Button>  
         
       </Flex>
-      <TableContainer pl={4} bgColor={'skyblue'}>
-        <Table variant='striped' colorScheme='teal'>
+      <TableContainer pl={4}>
+        <Table colorScheme='teal'>
           <TableCaption>Product list to be added</TableCaption>
           <Thead>
-            <Tr>
+            <Tr bgColor={'#e2e8f0'}>
               <Th textAlign={'center'}>NO</Th>
               <Th textAlign={'center'}>PRODUCT</Th>
               <Th textAlign={'center'}>IMAGE</Th>
@@ -117,6 +127,19 @@ function Shop() {
       </TableContainer>
     </>
   )
+}
+
+function rupiah(price) {
+  const priceString = price.toString();
+  const len = priceString.length;
+  let str = "";
+  for (let i = 0; i < len; i++) {
+    str += priceString[i];
+    if ((len - i - 1) % 3 == 0 && i != len - 1) {
+      str += ".";
+    }
+  }
+  return `Rp${str}`;
 }
 
 export default Shop;
