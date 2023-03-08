@@ -8,7 +8,8 @@ import './css/styles.css';
 import { Routes, Route } from 'react-router-dom';
 import Ex5Input from "./component/Exercise5/Ex5Input";
 import Ex5List from "./component/Exercise5/Ex5List";
-
+import Shop from "./component/ShopCart/Shop";
+import Cart from "./component/ShopCart/Cart";
 
 class App extends React.Component {
   render() {
@@ -22,6 +23,8 @@ class App extends React.Component {
           <Route exact path="/my-app/exercise3" element={<Exercise3/>} />
           <Route exact path="/my-app/exercise5/input" element={<Ex5Input/>} />
           <Route exact path="/my-app/exercise5/list" element={<Ex5List/>} />
+          <Route exact path="/my-app/shop" element={<Shop/>} />
+          <Route exact path="/my-app/cart" element={<Cart/>} />
         </Routes>
         <Footer/>
       </div>

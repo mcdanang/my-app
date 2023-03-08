@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Box, Heading, Center, Stack, Button, Text } from '@chakra-ui/react';
+import { Box, Heading, Center, Stack, Button } from '@chakra-ui/react';
 
 function Header() {
   return (
@@ -9,21 +9,21 @@ function Header() {
         <Stack direction='column' spacing={2} align='center'>
             <Link style={{ textDecoration: 'none' }} to="/my-app/exercise1">
               <Button w={150} p={2} whiteSpace="normal" blockSize="auto" colorScheme='facebook' variant='ghost'>
-                Exercise 1<br></br>(Counter App)
+                Counter App
               </Button>
             </Link>
             <Link style={{ textDecoration: 'none' }} to="/my-app/exercise2">
               <Button w={150} p={2} whiteSpace="normal" blockSize="auto" colorScheme='facebook' variant='ghost'>
-                Exercise 2<br></br>(Stopwatch App)
+                Stopwatch App
               </Button>
             </Link>
             <Link style={{ textDecoration: 'none' }} to="/my-app/exercise3">
               <Button w={150} p={2} whiteSpace="normal" blockSize="auto" colorScheme='facebook' variant='ghost'>
-                Exercise 3<br></br>(Filter App)
+                Filter App
               </Button>
             </Link>
 
-            <Heading textAlign={'center'} fontSize={16}>Exercise 5<br/>(Global State app)</Heading>
+            <Heading textAlign={'center'} fontSize={16}>Global State app</Heading>
             <Box display={'flex'} gap={2}>
               <Link style={{ textDecoration: 'none' }} to="/my-app/exercise5/input">
                 <Button colorScheme='facebook' variant='ghost'>Input</Button>
@@ -31,7 +31,18 @@ function Header() {
               <Link style={{ textDecoration: 'none' }} to="/my-app/exercise5/list">
                 <Button colorScheme='facebook' variant='ghost'>List</Button>
               </Link>
-            </Box>        
+            </Box> 
+            
+            <Heading textAlign={'center'} fontSize={16}>Shop Cart App</Heading>
+            <Box display={'flex'} gap={2}>
+              <Link style={{ textDecoration: 'none' }} to="/my-app/shop">
+                <Button colorScheme='facebook' variant='ghost'>Shop</Button>
+              </Link>
+              <Link style={{ textDecoration: 'none' }} to="/my-app/cart">
+                <Button colorScheme='facebook' variant='ghost'>Cart</Button>
+              </Link>
+            </Box> 
+
         </Stack>
       </Center>
     </Box>
