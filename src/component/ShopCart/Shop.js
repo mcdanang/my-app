@@ -29,7 +29,10 @@ function Shop() {
       .then(res => {
         setItems(res.data);
       })
-      .catch(err => console.error(err))
+      .catch(err => {
+        console.error(err)
+        setItems(productList.products);
+      })
   }, [])
 
   console.log(items); 

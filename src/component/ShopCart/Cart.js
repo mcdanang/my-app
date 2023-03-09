@@ -22,19 +22,6 @@ import { MdDelete } from 'react-icons/md'
 
 function Cart() {
 
-  function rupiah(price) {
-    const priceString = price.toString();
-    const len = priceString.length;
-    let str = "";
-    for (let i = 0; i < len; i++) {
-      str += priceString[i];
-      if ((len - i - 1) % 3 == 0 && i != len - 1) {
-        str += ".";
-      }
-    }
-    return `Rp${str}`;
-  }
-
   const productList = useSelector((state) => state.product);
   const dispatch = useDispatch();
   
@@ -97,7 +84,14 @@ function Cart() {
         <Text fontWeight={'bold'}>Ringkasan Belanja</Text>
         {summaryPrice}
         <Box h={1} bgColor={'#eeeeee'}></Box>
-        <Text fontWeight={'bold'}>Total Harga : {rupiah(totalPrice)}</Text>
+        <Flex py={2}>
+          <Box w={'75%'} pb={1} fontWeight={'bold'}>
+            Total Harga
+          </Box>
+          <Box pb={1} fontWeight={'bold'}>
+            {rupiah(totalPrice)}
+          </Box>
+        </Flex>
         <Button color={'white'} w={'100%'} bgColor={'green.400'}>Beli</Button>
       </Box>
       <TableContainer>
@@ -121,6 +115,19 @@ function Cart() {
       </TableContainer>
     </>
   )
+}
+
+function rupiah(price) {
+  const priceString = price.toString();
+  const len = priceString.length;
+  let str = "";
+  for (let i = 0; i < len; i++) {
+    str += priceString[i];
+    if ((len - i - 1) % 3 == 0 && i != len - 1) {
+      str += ".";
+    }
+  }
+  return `Rp${str}`;
 }
 
 export default Cart;
