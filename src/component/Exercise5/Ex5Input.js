@@ -24,13 +24,13 @@ function Ex5Input() {
       nameList.push(el);
       // console.log(nameList);
       localStorage.setItem("nameList", JSON.stringify(nameList));
-      console.log(localStorage.getItem("nameList"));
+      // console.log(localStorage.getItem("nameList"));
     } else if (button === 'delete' && nameList.includes(el)) {
       const index = nameList.indexOf(el);
       nameList.splice(index, 1);
       // console.log(nameList);
       localStorage.setItem("nameList", JSON.stringify(nameList));
-      console.log(localStorage.getItem("nameList"));
+      // console.log(localStorage.getItem("nameList"));
     }
   }
 
