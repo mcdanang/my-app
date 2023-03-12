@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Danang Priambodo",
+      "email": "mdanangp@mail.com",
+      "password": "danang1234"
+    },
+    {
+      "id": 2,
+      "name": "Khalisa Manoban",
+      "email": "khalisamanoban@mail.com",
+      "password": "khalisa5678"
+    },
+    {
+      "id": 3,
+      "name": "Jenny Ruby",
+      "email": "jennyruby@mail.com",
+      "password": "jenny1234"
+    },
+    {
+      "id": 4,
+      "name": "Ji Soo",
+      "email": "jisoo@mail.com",
+      "password": "jisoo5678"
+    },
+    {
+      "id": 5,
+      "name": "Park Rose",
+      "email": "parkrose@mail.com",
+      "password": "rose1234"
+    },
+    {
+      "name": "Lalisa",
+      "email": "lalisa@mail.com",
+      "password": "Lalisa!@34",
+      "id": 6
+    },
+    {
+      "name": "Pradono",
+      "email": "danar@mail.com",
+      "password": "Danar!@34",
+      "id": 7
+    }
+  ]
+}

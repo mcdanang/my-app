@@ -10,6 +10,8 @@ import Ex5Input from "./component/Exercise5/Ex5Input";
 import Ex5List from "./component/Exercise5/Ex5List";
 import Shop from "./component/ShopCart/Shop";
 import Cart from "./component/ShopCart/Cart";
+import Users from "./component/User/Users";
+import Register from "./component/User/Register";
 
 class App extends React.Component {
   render() {
@@ -25,6 +27,8 @@ class App extends React.Component {
           <Route exact path="/my-app/exercise5/list" element={<Ex5List/>} />
           <Route exact path="/my-app/shop" element={<Shop/>} />
           <Route exact path="/my-app/cart" element={<Cart/>} />
+          <Route exact path="/my-app/users" element={<Users/>} />
+          <Route exact path="/my-app/register" element={<Register/>} />
         </Routes>
         <Footer/>
       </div>
