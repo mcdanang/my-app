@@ -41,6 +41,36 @@
       "email": "danar@mail.com",
       "password": "Danar!@34",
       "id": 7
+    },
+    {
+      "name": "Nody Risky",
+      "email": "nody@mail.com",
+      "password": "Nody!@34",
+      "id": 8
+    },
+    {
+      "name": "Adit Pramudito",
+      "email": "adit@mail.com",
+      "password": "Adit!@34",
+      "id": 9
+    },
+    {
+      "name": "Panas Spesial",
+      "email": "panas@mail.com",
+      "password": "Panas!@34",
+      "id": 10
+    },
+    {
+      "name": "Toby Mcguire",
+      "email": "toby@mail.com",
+      "password": "Toby!@34",
+      "id": 11
+    },
+    {
+      "name": "Rizky Rahadianto",
+      "email": "rizky@mail.com",
+      "password": "Rizky!@34",
+      "id": 12
     }
   ]
 }

@@ -12,6 +12,8 @@ import Shop from "./component/ShopCart/Shop";
 import Cart from "./component/ShopCart/Cart";
 import Users from "./component/User/Users";
 import Register from "./component/User/Register";
+import Login from "./component/User/Login";
+import Logout from "./component/User/Logout";
 
 class App extends React.Component {
   render() {
@@ -29,6 +31,8 @@ class App extends React.Component {
           <Route exact path="/my-app/cart" element={<Cart/>} />
           <Route exact path="/my-app/users" element={<Users/>} />
           <Route exact path="/my-app/register" element={<Register/>} />
+          <Route exact path="/my-app/login" element={<Login/>} />
+          <Route exact path="/my-app/logout" element={<Logout/>} />
         </Routes>
         <Footer/>
       </div>

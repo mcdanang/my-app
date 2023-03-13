@@ -45,8 +45,8 @@ function Header() {
 
             <Heading textAlign={'center'} fontSize={16}>User Data</Heading>
             <Box display={'flex'} gap={2}>
-              <Link style={{ textDecoration: 'none' }} to="/my-app/users">
-                <Button colorScheme='facebook' variant='ghost'>Users</Button>
+              <Link style={{ textDecoration: 'none' }} to="/my-app/login">
+                <Button colorScheme='facebook' variant='ghost'>Login</Button>
               </Link>
               <Link style={{ textDecoration: 'none' }} to="/my-app/register">
                 <Button colorScheme='facebook' variant='ghost'>Register</Button>

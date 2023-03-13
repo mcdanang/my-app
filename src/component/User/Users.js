@@ -17,6 +17,7 @@ import userData from './users.json';
 function Users() {
 
   const [users, setUsers] = useState([]);
+
   localStorage.setItem('users', JSON.stringify(users));
 
   useEffect(() => {
@@ -39,10 +40,10 @@ function Users() {
           <TableCaption>User Data</TableCaption>
           <Thead>
             <Tr bgColor={'#e2e8f0'}>
-              <Th textAlign={'center'}>ID</Th>
-              <Th textAlign={'center'}>NAME</Th>
-              <Th textAlign={'center'}>EMAIL</Th>
-              <Th textAlign={'center'}>PASSWORD</Th>
+              <Th key={'id'} textAlign={'center'}>ID</Th>
+              <Th key={'name'} textAlign={'center'}>NAME</Th>
+              <Th key={'email'} textAlign={'center'}>EMAIL</Th>
+              <Th key={'password'} textAlign={'center'}>PASSWORD</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -50,10 +51,10 @@ function Users() {
               users.map((user) => {
                 return (
                   <Tr>
-                    <Td textAlign={'center'}>{user.id}</Td>
-                    <Td textAlign={'center'}>{user.name}</Td>
-                    <Td textAlign={'center'}>{user.email}</Td>
-                    <Td textAlign={'center'}>{user.password}</Td>
+                    <Td key={user.id} textAlign={'center'}>{user.id}</Td>
+                    <Td key={user.name}  textAlign={'center'}>{user.name}</Td>
+                    <Td key={user.email}  textAlign={'center'}>{user.email}</Td>
+                    <Td key={user.password}  textAlign={'center'}>{user.password}</Td>
                   </Tr>
                 )
               })
