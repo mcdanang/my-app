@@ -1,4 +1,4 @@
-import { Box, Heading, Button } from "@chakra-ui/react";
+import { Box, Heading, Button, Text, Center } from "@chakra-ui/react";
 import NavbarUsers from "./NavbarUsers";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup'
@@ -72,6 +72,9 @@ function Login() {
             return (
               <Box w = {'80%'} p={10} border={'4px'} borderRadius={10} borderColor={'green.300'}>
                 <Heading fontSize={20} textAlign={'center'}>Login</Heading>
+                <Center>
+                  <Text>For testing, use	email: <b>admin@mail.com</b> and password:	<b>Admin!@34</b></Text>
+                </Center>
                 <Form>
                   <Box display={'flex'} p={3}>
                     <Box w={'100px'}>Email</Box>
@@ -100,8 +103,9 @@ function Login() {
                       style={{ color: "red", fontSize: "12px", margin: "auto" }}
                     />
                   </Box>
-                  
-                  <Button m={5} type="submit">Submit</Button>
+                  <Center>
+                    <Button m={5} type="submit">Submit</Button>
+                  </Center>
                 </Form>
               </Box>
             )

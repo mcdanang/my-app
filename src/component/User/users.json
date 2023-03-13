@@ -71,6 +71,12 @@
       "email": "rizky@mail.com",
       "password": "Rizky!@34",
       "id": 12
+    },
+    {
+      "name": "admin1",
+      "email": "admin@mail.com",
+      "password": "Admin!@34",
+      "id": 13
     }
   ]
 }

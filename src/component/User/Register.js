@@ -1,4 +1,4 @@
-import { Box, Heading, Button } from "@chakra-ui/react";
+import { Box, Heading, Button, Center } from "@chakra-ui/react";
 import NavbarUsers from "./NavbarUsers";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup'
@@ -103,7 +103,9 @@ function Register() {
                     />
                   </Box>
                   
-                  <Button m={5} type="submit">Submit</Button>
+                  <Center>
+                    <Button m={5} type="submit">Submit</Button>
+                  </Center>
                 </Form>
               </Box>
             )
